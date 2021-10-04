@@ -1,0 +1,9 @@
+services:
+  convos:
+  # Stable realease didn't worked causing this issue : exec user process caused: exec format error
+    image: convos/convos:v6.31 
+    ports:
+      - "2021:3000"
+    volumes:
+      # Using ":z" for the volume for SELinux Enforcing policy on (CentOS, Fedora or RHEL)
+      - ./data:/data:z
